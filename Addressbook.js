@@ -198,7 +198,9 @@ function deleteContact(firstName, lastName) {
     console.log("Contact Does Not Exist");
   }
 }
-
+/**
+ * Add Cotact to Array
+ */
 try {
   addressBookArray.push(
     new Contact(
@@ -275,5 +277,24 @@ function sortAddressBookByName() {
   );
   console.log(addressBookArray);
 }
+function sortAddressBookByCity() {
+  addressBookArray.sort((firstPerson, secondPerson) =>
+    firstPerson.city.localeCompare(secondPerson.city)
+  );
+  console.log(addressBookArray);
+}
 
+function sortAddressBookByState() {
+  addressBookArray.sort((firstPerson, secondPerson) =>
+    firstPerson.state.localeCompare(secondPerson.state)
+  );
+  console.log(addressBookArray);
+}
+
+function sortAddressBookByZip() {
+  addressBookArray.sort((firstPerson, secondPerson) =>
+    firstPerson.zip.localeCompare(secondPerson.zip)
+  );
+  console.log(addressBookArray);
+}
 sortAddressBookByName();
