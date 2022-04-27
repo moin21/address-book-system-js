@@ -124,15 +124,23 @@ class Contact {
   }
 }
 /**
- * Creating new contact object.
+ * Using array to store the contacts.
+ * We are using the push method to add the contact in the array
  */
-let contact = new Contact(
-  "Moinuddin",
-  "Asraf",
-  "Jaipur",
-  "Rajasthan",
-  311001,
-  "91-9999999999",
-  "moin@gmail.com"
-);
-console.log(contact.toString());
+let addressBookArray = new Array();
+try {
+  addressBookArray.push(
+    new Contact(
+      "Moinuddin",
+      "Asraf",
+      "Jaipur",
+      "Rajasthan",
+      "410387",
+      "91-9876543219",
+      "moin@gmail.com"
+    )
+  );
+} catch (e) {
+  console.error(e);
+}
+console.log(addressBookArray);
