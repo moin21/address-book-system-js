@@ -251,5 +251,21 @@ console.log(
 function searchContactByCity(city) {
   return addressBookArray.filter((contact) => contact.city == city);
 }
+
+/**
+ *  Function to get count by city
+ * We are using the filter method and length to get the count.
+ * @param {*} city - will pass the city name
+ * @returns - count of contact in specific city.
+ */
+function getCountOfContactsByCity(city) {
+  return (
+    "Count of Contact in " +
+    city +
+    " is: " +
+    addressBookArray.filter((contact) => contact.city == city).length
+  );
+}
 console.log("\nSearch Contact By City");
 console.log(searchContactByCity("Gotham"));
+console.log(getCountOfContactsByCity("Gotham"));
