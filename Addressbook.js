@@ -260,12 +260,20 @@ function searchContactByCity(city) {
  */
 function getCountOfContactsByCity(city) {
   return (
-    "Count of Contact in " +
+    "Count of Contacts in " +
     city +
     " is: " +
     addressBookArray.filter((contact) => contact.city == city).length
   );
 }
-console.log("\nSearch Contact By City");
-console.log(searchContactByCity("Gotham"));
-console.log(getCountOfContactsByCity("Gotham"));
+/**
+ * Function to sort the array in asscending order.
+ */
+function sortAddressBookByName() {
+  addressBookArray.sort((firstPerson, secondPerson) =>
+    firstPerson.firstName.localeCompare(secondPerson.firstName)
+  );
+  console.log(addressBookArray);
+}
+
+sortAddressBookByName();
