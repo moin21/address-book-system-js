@@ -214,7 +214,20 @@ try {
 } catch (e) {
   console.error(e);
 }
+
+/**
+ * Function to count the contacts in the array
+ * We have used the reduce method to call the specified function for all the elements in an array.
+ * @param {*} count - count of contact
+ * @returns - total count
+ */
+function getCountOfContacts(count) {
+  count += 1;
+  return count;
+}
 console.log(addressBookArray);
 console.log("\nAfter Editing Contact");
-deleteContact("Moinuddin", "Asraf");
 console.log(addressBookArray);
+console.log(
+  "\nCount of Contacts : " + addressBookArray.reduce(getCountOfContacts, 0)
+);
