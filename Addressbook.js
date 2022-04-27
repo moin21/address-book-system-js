@@ -214,7 +214,21 @@ try {
 } catch (e) {
   console.error(e);
 }
-
+try {
+  addressBookArray.push(
+    new Contact(
+      "Bruce",
+      "Wayne",
+      "Gotham",
+      "Gotham",
+      "410387",
+      "91-9876543219",
+      "wayne@gmail.com"
+    )
+  );
+} catch (e) {
+  console.error(e);
+}
 /**
  * Function to count the contacts in the array
  * We have used the reduce method to call the specified function for all the elements in an array.
@@ -226,8 +240,16 @@ function getCountOfContacts(count) {
   return count;
 }
 console.log(addressBookArray);
-console.log("\nAfter Editing Contact");
-console.log(addressBookArray);
 console.log(
   "\nCount of Contacts : " + addressBookArray.reduce(getCountOfContacts, 0)
 );
+/**
+ *  Function to search contact by city
+ * @param {*} city - we will pass the city to search for contacts
+ * @returns - contacts with specific city
+ */
+function searchContactByCity(city) {
+  return addressBookArray.filter((contact) => contact.city == city);
+}
+console.log("\nSearch Contact By City");
+console.log(searchContactByCity("Gotham"));
